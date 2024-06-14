@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>prueba</title>
+    <link rel="icon" href="https://i.ibb.co/k8Nnmwj/VERSIONES-LOGO-ELYON-YIREH-RGB-02-edited.png" type="image/png">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://fonts.googleapis.com/css2?family=Syabil&display=swap" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' media='screen' href='index.css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+
+</head>
+<body>
+
+
+
+
+    <div id="bienestar">
+
+        <div class="container">
+
+        <center>
+            <img src="https://i.ibb.co/k8Nnmwj/VERSIONES-LOGO-ELYON-YIREH-RGB-02-edited.png" width="150px;" height="100px">
+
+            <img src="https://i.ibb.co/jLzxtMR/bienestar.png" alt="logo de bienestar" width="100px" height="100px;">
+
+            <h2>HOJA DE VIDA UNICA DE EGRESADOS</h2>
+
+                <div class="section">
+                <center>
+                    <h4>SISTEMA DE GESTION DE CALIDAD</h4>
+                </center>
+                <label for="photo">Foto:</label>
+                <br>
+                <br>
+
+                <div class="photo-placeholder" id="photo-preview"></div>
+                <input type="file" id="photo" name="photo" accept="image/*" onchange="previewPhoto()">
+
+                <br>
+                <center>
+
+                    <h4>DATOS PERSONALES</h4>
+
+                </center>
+
+                     <div class="section">
+
+                    <form>
+                        <label for="name">Nombre y Apellidos:</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="document-type">Tipo de Documento:</label>
+                        <select id="document-type" name="document-type">
+                            <option value="TI.">TI.</option>
+                            <option value="CC.">CC.</option>
+                            <option value="Pte.">Pte.</option>
+                            <option value="PPT.">PPT.</option>
+                        </select>
+                        <label for="document-number">Número de Documento:</label>
+                        <input type="text" id="document-number" name="document-number" placeholder="Digite su número de documento" required><br>
+                        <label for="nationality">Nacionalidad:</label>
+                        <select id="nationality" name="nationality">
+                            <option value="Colombiana">Colombiana</option>
+                            <option value="Venezolana">Venezolana</option>
+                            <option value="Argentina">Argentina</option>
+                            <option value="Brasileña">Brasileña</option>
+                            <option value="Chilena">Chilena</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                        <label for="phone">Teléfono:</label>
+                        <input type="text" id="phone" name="phone"><br>
+                        <label for="address">Dirección:</label>
+                        <input type="text" id="address" name="address"><br>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email"><br><br>
+                    </form>
+                    <div class="section">
+                        <h4>FORMACION ACADEMICA</h4>
+                        <label for="education-level">Nivel Académico:</label>
+                        <select id="education-level" name="education-level">
+                            <option value="Bachillerato">Bachillerato</option>
+                            <option value="Técnico Laboral">Técnico Laboral</option>
+                            <option value="Tecnólogo">Tecnólogo</option>
+                            <option value="Pregrado">Pregrado</option>
+                            <option value="Posgrado">Posgrado</option>
+                        </select>
+                        <label for="semestres">Semestres o Años:</label>
+                        <input type="text" id="semestres" name="semestres">
+                        <label for="año">Año:</label>
+                        <input type="text" id="año" name="año">
+                        <label for="edu1-date">Graduado:</label>
+                        <input type="text" id="edu1-date" name="edu1-date">
+                        <label for="edu2-title">Título Obtenido:</label>
+                        <input type="text" id="edu2-title" name="edu2-title">
+                    </div>
+                </div>
+                <br>
+                <h4 style="text-align: center;">Especifique la lengua que maneja y su nivel (Lee-Escribe y Habla)</h4>
+                <strong><p>(MARQUE CON UNA X)</p></strong>
+                <form id="lenguasForm">
+                    <table>
+                        <tr>
+                            <th rowspan="2">Tipo de Lengua</th>
+                            <th colspan="3">Habilidad</th>
+                            <th colspan="3">Nivel</th>
+                        </tr>
+                        <tr>
+                            <th class="habilidad">Escribe</th>
+                            <th class="habilidad">Lee</th>
+                            <th class="habilidad">Habla</th>
+                            <th class="nivel">No</th>
+                            <th class="nivel">Regular</th>
+                            <th class="nivel">Fluido</th>
+                        </tr>
+                        <tr>
+                            <td>Español</td>
+                            <td><input type="text" name="espanol_escribe"></td>
+                            <td><input type="text" name="espanol_lee"></td>
+                            <td><input type="text" name="espanol_habla"></td>
+                            <td><input type="text" name="espanol_nivel_no"></td>
+                            <td><input type="text" name="espanol_nivel_regular"></td>
+                            <td><input type="text" name="espanol_nivel_fluido"></td>
+                        </tr>
+                        <tr>
+                            <td>Inglés</td>
+                            <td><input type="text" name="ingles_escribe"></td>
+                            <td><input type="text" name="ingles_lee"></td>
+                            <td><input type="text" name="ingles_habla"></td>
+                            <td><input type="text" name="ingles_nivel_no"></td>
+                            <td><input type="text" name="ingles_nivel_regular"></td>
+                            <td><input type="text" name="ingles_nivel_fluido"></td>
+                        </tr>
+                        <tr>
+                            <td>Francés</td>
+                            <td><input type="text" name="frances_escribe"></td>
+                            <td><input type="text" name="frances_lee"></td>
+                            <td><input type="text" name="frances_habla"></td>
+                            <td><input type="text" name="frances_nivel_no"></td>
+                            <td><input type="text" name="frances_nivel_regular"></td>
+                            <td><input type="text" name="frances_nivel_fluido"></td>
+                        </tr>
+                        <tr>
+                            <td>Otros</td>
+                            <td><input type="text" name="otros_escribe"></td>
+                            <td><input type="text" name="otros_lee"></td>
+                            <td><input type="text" name="otros_habla"></td>
+                            <td><input type="text" name="otros_nivel_no"></td>
+                            <td><input type="text" name="otros_nivel_regular"></td>
+                            <td><input type="text" name="otros_nivel_fluido"></td>
+                        </tr>
+                    </table>
+                </form>
+                <br>
+                <h4 style="text-align: center;">EDUCACION CONTINUA: formación complementaria para el fortalecimiento de competencias humanas y profesionales. <br>Contempla seminarios, foros, congresos, diplomados y cursos</h4><br>
+                <form id="educacionContinuaForm">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tipo de Capacitación</th>
+                                <th>Nombre de Formación</th>
+                                <th>Entidad que Certifica</th>
+                                <th>Fecha</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Congreso</td>
+                                <td><input type="text" name="nombre_formacion_congreso"></td>
+                                <td><input type="text" name="entidad_certifica_congreso"></td>
+                                <td><input type="date" name="fecha_congreso"></td>
+                            </tr>
+                            <tr>
+                                <td>Diplomado</td>
+                                <td><input type="text" name="nombre_formacion_diplomado"></td>
+                                <td><input type="text" name="entidad_certifica_diplomado"></td>
+                                <td><input type="date" name="fecha_diplomado"></td>
+                            </tr>
+                            <tr>
+                                <td>Seminario</td>
+                                <td><input type="text" name="nombre_formacion_seminario"></td>
+                                <td><input type="text" name="entidad_certifica_seminario"></td>
+                                <td><input type="date" name="fecha_seminario"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                
+                
+                        <div class="section">
+            
+                            <h4>EXPERIENCIA LABORAL O HUMANA</h4>
+                            <label for="job1-title">Nombre de la Empresa:</label>
+                            <input type="text" id="job1-title" name="job1-title">
+                
+                            <label for="job1-company">Cargo que Ocupo:</label>
+                            <input type="text" id="job1-company" name="job1-company">
+                
+                            <label for="job1-date">Jefe Inmediato:</label>
+                            <input type="text" id="job1-date" name="job1-date">
+                
+                            <label for="job1-description">Tiempo que presto el Servicio:</label>
+                            <textarea id="job1-description" name="job1-description"></textarea>
+                
+                            <label for="job2-title">Año en que lo Presto:</label>
+                            <input type="text" id="job2-title" name="job2-title">
+                
+                            <label for="job2-company">Numero de Contacto o Correo:</label>
+                            <input type="text" id="job2-company" name="job2-company">
+                        </div>
+                
+                        <div class="section">
+                            <h4>ENTIDAD QUE POSTULA</h4>
+                            <label for="job1-title">Nombre de la empresa:</label>
+                            <input type="text" id="job1-title" name="job1-title">
+                
+                            <label for="job1-company">Oficina enlace:</label>
+                            <input type="text" id="job1-company" name="job1-company">
+                
+                            <label for="job1-date">Dirrecion de Empresa:</label>
+                            <input type="text" id="job1-date" name="job1-date">
+                
+                            <label for="job1-description">Funcionario de Contacto:</label>
+                            <textarea id="job1-description" name="job1-description"></textarea>
+                
+                            <label for="job2-title">Numero de Teléfono o Celular:</label>
+                            <input type="text" id="job2-title" name="job2-title">
+                
+                            <label for="job2-company">Correo electronico de Empresa:</label>
+                            <input type="text" id="job2-company" name="job2-company">
+                
+                            <label for="job2-company">Pagina web de Empresa:</label>
+                            <input type="text" id="job2-company" name="job2-company">
+                        </div><br>
+                
+                        <div class="section">
+                            <br>
+                            <h4>REFERENCIAS FAMILIARES</h4>
+                            <label for="job1-title">Tipo de vinculo o Relacion:</label>
+                            <input type="text" id="job1-title" name="job1-title">
+                
+                            <label for="job1-company">Nombre de la Persona:</label>
+                            <input type="text" id="job1-company" name="job1-company">
+                
+                            <label for="job1-date">Dirrecion o Domicilio:</label>
+                            <input type="text" id="job1-date" name="job1-date">
+                
+                            <label for="job1-description">A que se Dedica:</label>
+                            <textarea id="job1-description" name="job1-description"></textarea>
+                
+                            <label for="job2-title">Numero de Teléfono o Celular:</label>
+                            <input type="text" id="job2-title" name="job2-title">
+                
+                            <label for="job2-company">Correo electronico:</label>
+                            <input type="text" id="job2-company" name="job2-company">
+                        </div>
+                    </div>
+                <CENTER>
+                    <p><h5>manifesto bajo la gravedad del juramento, me encuentro dentro de las casuales<br>
+                        de inhabilidad e incompatibilidad del orden constitucional o legal, para prestar<br>
+                        servicios de acuerdo a mis competencias o perfil ocupacional en cualquier de las<br>
+                        modalidades de contratacion. para todos los efectos legales, certifico que los datos<br>
+                        anotados por mi en el presente formato de hoja de vida, son veraces.</h5><br>
+                    </p>
+                    <input type="radio" id="si" name="respuesta" value="si">
+                    <label for="si">Sí</label><br>
+                    <input type="radio" id="no" name="respuesta" value="no">
+                    <label for="no">No</label><br>
+                </CENTER>
+                <center>
+
+                    <div id="fotofir">
+                        <input type="file" accept="image/png" onchange="previewFirma(event)">
+                        <img id="firma" src="#" alt="Firma" class="firma">
+                    </div>
+                    
+                  
+            
+                    <div class="Guardar">
+
+                        <br><button onclick="imprimir()">VIZUALIZAR PDF</button><br>
+
+                        </div>
+                    
+                
+
+                        <button type="button" onclick="descargarPDF()">Descargar PDF</button>
+
+
+                        <div id="pdf-preview" style="display:none;">
+                            <iframe id="pdf-frame" width="100%" height="500px"></iframe>
+                        </div>
+                </center>
+               </div>   
+     </div>
+            </div>        </div>
+                      </body>
+                     </html>
+                        
+            
+          
+            
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+<style> 
+
+
+
+body {
+   font-family: Arial, sans-serif;
+   margin: 70px;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   background: url('https://i.ibb.co/D9sK0hG/foto.jpg');
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+}
+.container {
+   max-width: 700px;
+   margin: auto;
+}
+h1, h2 {
+   text-align: center;
+}
+label {
+   display: block;
+   margin-top: 6px;
+   font-weight: bold;
+}
+input, textarea {
+   width: 70%;
+   padding: 5px;
+   margin-top: 7px;
+   display: block;
+}
+
+
+.photo-placeholder {
+   border: 1px solid #000;
+   height: 170px;
+   width: 130px;
+   margin-top: 10px;
+}
+.section {
+   margin-top: 20px;
+}
+
+table {
+   width: 80%;
+   border-collapse: collapse;
+   margin: 0 auto;
+}
+th, td {
+   border: 1px solid black;
+   padding: 6px;
+   text-align: center;
+}
+th {
+   background-color: #f2f2f2;
+}
+.habilidad {
+   background-color: #d9e2f3;
+}
+.nivel {
+   background-color: #e2efd9;
+}
+
+table {
+   width: 80%;
+   border-collapse: collapse;
+   margin: 0 auto;
+}
+th, td {
+   border: 1px solid black;
+   padding: 3px;
+   text-align: center;
+}
+th {
+   background-color: #f2f2f2;
+}
+
+
+#fotofir {
+   width: 200px;  /* Ajusta el ancho deseado */
+   height: 100px; /* Ajusta la altura deseada */
+   border: 1px solid #000; /* Opcional: para ver el borde del área de la firma */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden;
+}
+#firma {
+   max-width: 100%;
+   max-height: 100%;
+}
+
+
+
+
+/* si es una "ID" en html se llama en css como "#" */
+
+button {
+
+font-style: italic;
+width: 140px;
+background: linear-gradient(to left,  #154360 50%, lightblue 50%);
+background-size: 200% 200%; /* Cambio aquí */
+background-position: right bottom; /* Cambio aquí */
+filter: brightness(100%);
+color: rgb(255, 255, 255);
+font-family: 'TeXGyreCursor-Regular', monospace;
+padding: 13px 0 13px;
+font-weight: bold;
+box-shadow: 0 0 30px #154360;
+text-align: center;
+transition: all 0.8s;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 25px 20px;
+border: 2px solid  #154360;
+border-radius: 5px;
+}
+
+button:hover {
+
+color: rgb(0, 0, 0);
+border: 2px solid rgb(0, 0, 0);
+background-position: left bottom; /* Cambio aquí */
+transform: scale(1.2);
+transform-origin: top left;
+  
+}
+
+
+
+
+   @media print {
+    input, button, select,button {
+        display: none;
+    }
+    /* Para ocultar colores de fondo y texto */
+    * {
+        background: none !important;
+        color: black !important;
+        text-shadow: none !important;
+    }
+}
+
+
+
+
+
+
+</style>
+
+
+
+
+
+
+
+<script>
+
+    function previewPhoto() {
+        var fileInput = document.getElementById('photo');
+        var file = fileInput.files[0];
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+            var preview = document.getElementById('photo-preview');
+            preview.innerHTML = '';
+            var img = document.createElement('img');
+            img.src = e.target.result;
+            img.style.maxWidth = '100%';
+            img.style.maxHeight = '100%';
+            preview.appendChild(img);
+        }
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
+
+</script>
+
+
+
+
+<script>
+
+function previewFirma(event) {
+const input = event.target;
+const file = input.files[0];
+
+if (file) {
+const reader = new FileReader();
+reader.onload = function() {
+const dataURL = reader.result;
+const img = document.getElementById('firma');
+img.src = dataURL;
+};
+reader.readAsDataURL(file);
+}
+}
+
+</script>
+
+
+
+
+
+
+
+<script>
+
+
+
+ function imprimir() {
+        window.print(); 
+    }
+
+
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+
+function descargarPDF() {
+  const doc = new jsPDF();
+  const bienestar = document.getElementById('bienestar');
+
+  html2canvas(bienestar).then(function(canvas) {
+    const imgData = canvas.toDataURL('image/png'); // Cambia 'image/jpeg' a 'image/png'
+
+    doc.addImage(imgData, 'PNG', 10, 10, 180, 150); // Añade la imagen al PDF
+
+    doc.save('formulario_egresados.pdf'); // Guarda el PDF
+  });
+}
+
+
+    </script>
